@@ -96,7 +96,7 @@ export const availableLocations = [
   },
   {
     cityName: "新北市", // 拿預測天氣資料 fetchWeatherForecast
-    locationName: "板橋", // 拿目前天氣資料 fetchCurrentElement
+    locationName: "新北", // 拿目前天氣資料 fetchCurrentElement
     sunriseCityName: "新北市", // 拿預測天氣資料 getMoment
   },
 ];

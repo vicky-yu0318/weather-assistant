@@ -81,6 +81,7 @@ function useLocalStorage(key, defaultValue) {
 
 export default function Home() {
   // console.log("invoke Home function component");
+
   const [currentPage, setCurrentPage] = useState("weatherCard");
   // ===================================================
   const [currentCity2] = useLocalStorage("cityName", "臺北市"); // TODO: 使用自定義 hook（不用寫於 useEffect 內）, 不會有 undefined 狀況發生

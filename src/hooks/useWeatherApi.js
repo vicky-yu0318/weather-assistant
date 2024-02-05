@@ -4,7 +4,7 @@ import _ from "lodash";
 // TODO: 拿預測天氣資料
 const fetchWeatherForecast = (cityName) => {
   return fetch(
-    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46&locationName=${cityName}`
+    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=${process.env.NEXT_PUBLIC_API_KEY}&locationName=${cityName}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -42,7 +42,7 @@ const fetchWeatherForecast = (cityName) => {
 // TODO: 拿目前天氣資料
 const fetchCurrentElement = (locationName) => {
   return fetch(
-    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46&StationName=${locationName}`
+    `https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=${process.env.NEXT_PUBLIC_API_KEY}&StationName=${locationName}`
     // "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46"
     // &StationId=466883
   )
