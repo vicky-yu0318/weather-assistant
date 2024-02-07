@@ -57,27 +57,14 @@ const weatherIcons = {
 // }
 
 const WeatherIcon = ({ currentWeather, currentMoment }) => {
-  // 將中文 key 轉換英文方式：
-  // useEffect(() => {
-  //   const final = translate(currentWeather);
-  // }, [currentWeather]);
-
   // TODO: useMemo 的作用是在依賴的值發生變化時，才重新計算和返回新的值。這對於避免在每次渲染時都重新計算 iconImg 的值是很有用的，尤其是當 currentWeather 或 currentMoment 的值變化時。
   const iconImg = useMemo(
-    // () => weatherIcons?.[currentMoment]?.[currentWeather] || defaultWeather,
     () =>
       _.get(weatherIcons, `${currentMoment}.${currentWeather}`, defaultWeather),
     [currentMoment, currentWeather]
   );
-  //   另一種方法
-  //   const iconImg =
-  //     weatherIcons && weatherIcons[currentMoment]
-  //       ? weatherIcons[moment][currentWeather] || defaultWeather
-  //       : defaultWeather;
   return (
     <>
-      {/* {console.log("weatherIcons", weatherIcons?.[currentMoment])} 一開始 undefined */}
-      {/* {console.log("iconImg >> ", iconImg)} 確定有資料 */}
       <IconContainer>
         <Image src={iconImg} alt="" priority as="image"></Image>
       </IconContainer>
