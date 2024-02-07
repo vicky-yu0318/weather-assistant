@@ -51,11 +51,7 @@ const WeatherIcon = ({ currentWeather, currentMoment }) => {
       _.get(weatherIcons, `${currentMoment}.${currentWeather}`, defaultWeather),
     [currentMoment, currentWeather]
   );
-  return (
-    <div>
-      <Image src={weatherIcon} alt=""></Image>
-    </div>
-  );
+  return <div>{weatherIcon && <Image src={weatherIcon} alt=""></Image>}</div>;
 };
 
 export default WeatherIcon;
