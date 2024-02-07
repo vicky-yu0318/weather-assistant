@@ -22,7 +22,6 @@ const IconContainer = styled.div`
   }
 `;
 
-// ["陰","陰有靄","有霧","陰有雨","-99","多雲","晴有靄","陰有靄","陰有霾"]
 const weatherIcons = {
   day: {
     陰: DayCloudy,
@@ -46,29 +45,16 @@ const weatherIcons = {
   },
 };
 
-// 將中文 key 轉換英文方式：
-// function translate(currentWeather) {
-//   switch (currentWeather) {
-//     case "陰有靄":
-//       return "hihi";
-//     default:
-//       break;
-//   }
-// }
-
 const WeatherIcon = ({ currentWeather, currentMoment }) => {
-  // TODO: useMemo 的作用是在依賴的值發生變化時，才重新計算和返回新的值。這對於避免在每次渲染時都重新計算 iconImg 的值是很有用的，尤其是當 currentWeather 或 currentMoment 的值變化時。
-  const iconImg = useMemo(
+  const weatherIcon = useMemo(
     () =>
       _.get(weatherIcons, `${currentMoment}.${currentWeather}`, defaultWeather),
     [currentMoment, currentWeather]
   );
   return (
-    <>
-      <IconContainer>
-        <Image src={iconImg} alt="" priority as="image"></Image>
-      </IconContainer>
-    </>
+    <div>
+      <Image src={weatherIcon} alt=""></Image>
+    </div>
   );
 };
 
