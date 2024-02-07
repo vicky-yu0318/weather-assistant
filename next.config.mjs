@@ -5,6 +5,7 @@ const nextConfig = {
     unoptimized: true,
   },
   reactStrictMode: false,
+  basePath: "/github-pages",
   // exportPathMap: function () {
   //   return {
   //     "/": { page: "/" },
