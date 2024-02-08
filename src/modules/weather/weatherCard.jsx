@@ -31,7 +31,7 @@ const LoadingWrapper = styled.div`
 const WeatherCardWrapper = styled.div`
   position: relative;
   min-width: 360px;
-  height: 350px;
+  height: 380px;
   box-shadow: 0 1px 3px 0 #ccc;
   background-color: ${({ theme }) => theme.foregroundColor};
   box-sizing: content-box;
