@@ -108,6 +108,7 @@ export default function Home() {
     [currentMoment]
   );
 
+  const KEY = "CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46";
   useEffect(() => {
     async function fetchData() {
       // TODO: 拿太陽日落日出時間
@@ -116,7 +117,7 @@ export default function Home() {
         const currentTimestamp = getTime(new Date());
         // fetch('https://opendata.cwa.gov.tw/api/v1/rest/datastore/A-B0062-001?Authorization=CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46&CountyName=%E6%96%B0%E5%8C%97%E5%B8%82&parameter=SunRiseTime,SunSetTime')
         return fetch(
-          `https://opendata.cwa.gov.tw/api/v1/rest/datastore/A-B0062-001?Authorization=CWA-A2BB0B75-6139-4F2B-9DC0-770ECC8F9C46&CountyName=${locationName}&Date=${currentDate}`
+          `https://opendata.cwa.gov.tw/api/v1/rest/datastore/A-B0062-001?Authorization=${KEY}&CountyName=${locationName}&Date=${currentDate}`
         )
           .then((response) => response.json())
           .then((data) => {
