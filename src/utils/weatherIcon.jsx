@@ -11,6 +11,7 @@ import NightCloudyWidthRain from "@/images/night-cloudy-with-rain.svg";
 import NightCloudyWithHaze from "@/images/night-cloudy-haze.svg";
 import NightCloudy from "@/images/night-cloudy.svg";
 import NightFog from "@/images/night-fog.svg";
+import DaySunny from "@/images/day-sunny.svg";
 import defaultWeather from "@/images/default-weather.png";
 
 const IconContainer = styled.div`
@@ -23,6 +24,7 @@ const IconContainer = styled.div`
 
 const weatherIcons = {
   day: {
+    晴: DaySunny,
     陰: DayCloudy,
     有霧: Foggy,
     陰有雨: DayCloudyWidthRain,
@@ -31,8 +33,10 @@ const weatherIcons = {
     晴有霾: DaySunnyWithHaze,
     陰有靄: DayCloudyWithHaze,
     陰有霾: DayCloudyWithHaze,
+    多雲有霾: NightCloudyWithHaze,
   },
   night: {
+    晴: DaySunny,
     陰: NightCloudy,
     有霧: NightFog,
     陰有雨: NightCloudyWidthRain,
@@ -41,6 +45,7 @@ const weatherIcons = {
     晴有霾: NightCloudyWithHaze,
     陰有靄: NightCloudyWithHaze,
     陰有霾: NightCloudyWithHaze,
+    多雲有霾: NightCloudyWithHaze,
   },
 };
 
