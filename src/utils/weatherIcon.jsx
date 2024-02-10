@@ -12,7 +12,6 @@ import NightCloudyWithHaze from "@/images/night-cloudy-haze.svg";
 import NightCloudy from "@/images/night-cloudy.svg";
 import NightFog from "@/images/night-fog.svg";
 import defaultWeather from "@/images/default-weather.png";
-// import { useEffect } from "react";
 
 const IconContainer = styled.div`
   height: 110px;
@@ -51,7 +50,11 @@ const WeatherIcon = ({ currentWeather, currentMoment }) => {
       _.get(weatherIcons, `${currentMoment}.${currentWeather}`, defaultWeather),
     [currentMoment, currentWeather]
   );
-  return <div>{weatherIcon && <Image src={weatherIcon} alt=""></Image>}</div>;
+  return (
+    <IconContainer>
+      {weatherIcon && <Image src={weatherIcon} alt=""></Image>}
+    </IconContainer>
+  );
 };
 
 export default WeatherIcon;
